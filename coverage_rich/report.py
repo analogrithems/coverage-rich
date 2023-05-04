@@ -81,7 +81,7 @@ def report(coverage_data=None):
 
     console = Console()
     console.print(table)
-    if coverage_data.get("totals", {}).get("percent_covered", 0) < config.get(
+    if coverage_data.get("totals", {}).get("percent_covered", 0) < float(config.get(
         "fail-under", 80
-    ):
+    )):
         raise SystemExit(f"test coverage under {config.get('fail-under', 80)}")
